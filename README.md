@@ -2,6 +2,8 @@
 
 Este proyecto es un informe de ventas armado en Power BI sobre una base del estilo Superstore: unas 2.500 órdenes de una cadena minorista de Estados Unidos entre 2023 y 2025. La idea fue construir algo que pudiera usar un gerente comercial para ver en pocos minutos cómo viene el negocio y dónde conviene poner el foco.
 
+![Portada del informe](capturas/01-portada.png)
+
 ## Qué pregunta busca responder
 
 - Cuánto se vende, cuánto se gana y cómo evolucionan las dos cosas en el tiempo.
@@ -17,6 +19,22 @@ El archivo tiene una portada con navegación y cuatro páginas. Todas comparten 
 2. **Ventas**: participación de cada categoría y subcategoría, una tabla con el detalle por subcategoría y un gráfico de dispersión que cruza volumen de ventas con margen.
 3. **Clientes**: mapa de ventas por estado, ranking de los 10 mejores clientes y comparación de ventas y ganancia por región y segmento.
 4. **Productos**: producto más vendido (en general y por categoría), región que más compra, cantidad y tasa de devoluciones, ventas perdidas por devolución, motivos de devolución y tasa por región con su gerente a cargo.
+
+### Resumen ejecutivo
+
+![Resumen ejecutivo](capturas/02-resumen-ejecutivo.png)
+
+### Ventas
+
+![Ventas](capturas/03-ventas.png)
+
+### Clientes
+
+![Clientes](capturas/04-clientes.png)
+
+### Productos
+
+![Productos](capturas/05-productos.png)
 
 ## Modelo de datos
 
@@ -44,6 +62,7 @@ Algunas conclusiones que saqué mirando el informe sin filtros:
 - **La ganancia creció aunque las ventas no.** En 2024 las ventas cayeron cerca de un 15% respecto de 2023, pero la ganancia subió igual y lo siguió haciendo en 2025. Parece que el negocio ganó en eficiencia más que en volumen.
 - **Tecnología factura, Insumos de oficina rinde.** Tecnología aporta casi el 60% de las ventas con un margen del 3,8%. Insumos de oficina representa apenas el 7,5% de las ventas, pero tiene un margen del 12% y genera cerca de un quinto de la ganancia total.
 - **El Sur es la región que más vende y la que menos gana.** Concentra el 28% de las ventas con el margen más bajo (3,2%). En el Este pasa lo contrario: vende menos y tiene el mejor margen (5,3%).
+- **Vender más no siempre es ganar más, tampoco con los clientes.** Dentro del top 10 hay dos clientes que dan pérdida: uno de ellos es el tercero en ventas y aun así deja un resultado negativo. Valdría la pena revisar qué descuentos o productos explican esos casos.
 - **Las devoluciones pesan.** Se devolvió el 8,2% de las órdenes, unos 46 millones en ventas. Tecnología tiene la tasa más alta (11%) y el Este es la región con más devoluciones (10,8%). Los motivos más frecuentes son "no cumplió las expectativas" y "producto defectuoso", lo que apunta más a calidad y descripción del producto que a la logística.
 
 ## Herramientas
