@@ -7,7 +7,7 @@ Hola, soy Nacho, de Mar del Plata (Argentina). Este repositorio reúne mis proye
 | Área | Proyecto | Herramientas | Descripción |
 |---|---|---|---|
 | Ventas | [Análisis de ventas USA](Ventas/Analisis-Ventas-USA) | Power BI, Power Query, DAX | Informe de ventas de una cadena minorista de EE. UU. (2023-2025): rentabilidad, clientes, productos y devoluciones. |
-| [Marketing](Marketing) | Próximamente | | |
+| [Marketing](Marketing) | [Campaña Meta Ads](Marketing/Campania-Meta-Ads-Chocolateria) | Power BI, Power Query, DAX | Rendimiento de 6 campañas de Meta Ads de una chocolatería (3er trimestre 2026): ROAS, audiencias, creatividades y embudo de conversión. |
 | [RRHH](RRHH) | Próximamente | | |
 | [Finanzas](Finanzas) | Próximamente | | |
 
