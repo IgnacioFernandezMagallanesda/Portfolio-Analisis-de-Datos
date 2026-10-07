@@ -66,7 +66,7 @@ Algunas conclusiones mirando el informe sin filtros:
 - **Facebook vende más de lo que cuesta.** Recibió el 43% de la inversión y generó el 56% de las ventas (ROAS 4,59 contra 2,73 en Instagram).
 - **18-24 años es el grupo que menos rinde.** Se lleva el 15% de la inversión y apenas el 5% de las ventas. En cambio, 35-44 y 45+ venden más de lo que cuestan, y las mujeres tienen mejor ROAS que los hombres en todas las edades.
 - **El carrusel es el mejor formato y el video el peor.** El carrusel tiene ROAS 5,79 y el video 1,71. Entre los productos, los anuncios de "Varios" (retargeting) y cajas de regalo son los que más retornan.
-- **Los anuncios se desgastan.** El mejor anuncio perdió casi la mitad de su CTR a lo largo de sus semanas activo.
+- **Los anuncios se desgastan.** El mejor anuncio perdió el 48% de su CTR en 14 semanas, así que conviene renovar las creatividades seguido.
 - **El embudo se cae antes del carrito.** De los que entran a la web, solo el 9,9% agrega un producto. Una vez en el carrito, 1 de cada 3 compra.
 
 **Recomendación principal:** pasar entre un 10% y un 15% del presupuesto de ventas de 18-24 años hacia +35 en Facebook, renovar las creatividades cada 4 a 6 semanas y revisar la tienda online (precios, envío, fotos) para mejorar la tasa de carrito.
