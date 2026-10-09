@@ -1,7 +1,7 @@
 USE superstore;
 
 
--- Que region tiene peor margen y como es la venta de productos? --
+-- ¿Cómo se reparte el margen por región y categoría? --
 SELECT 
 	region, category,
 	ROUND(SUM(sales), 2) AS ventas,
