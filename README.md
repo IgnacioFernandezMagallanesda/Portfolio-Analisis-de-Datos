@@ -10,6 +10,7 @@ Hola, soy Nacho, de Mar del Plata (Argentina). Este repositorio reúne mis proye
 | Ventas | [Análisis de ventas en SQL](Ventas/Analisis-Ventas-SQL) | MySQL, MySQL Workbench | Impacto de los descuentos en la ganancia, causa del bajo margen de la región West y evolución 2023-2025. |
 | [Marketing](Marketing) | [Campaña Meta Ads](Marketing/Campania-Meta-Ads-Chocolateria) | Power BI, Power Query, DAX | Rendimiento de 6 campañas de Meta Ads de una chocolatería (3er trimestre 2026): ROAS, audiencias, creatividades y embudo de conversión. |
 | [Soporte de Datos](Soporte-de-Datos) | [Validación de calidad de datos post-carga](Soporte-de-Datos/Validacion-Calidad-Datos-SQL) | MySQL, MySQL Workbench | 5 tickets de soporte sobre una tabla de staging: duplicados, nulos, valores fuera de rango, estados inconsistentes y cruce con tablas maestras, con diagnóstico, impacto y registro de cada incidente. |
+| [Soporte de Datos](Soporte-de-Datos) | [Monitoreo de procesos ETL y tickets](Soporte-de-Datos/Monitoreo-Procesos-ETL-SQL) | MySQL, MySQL Workbench | 5 pedidos de soporte sobre cargas nocturnas: procesos con más fallas, filas perdidas, corridas que no se ejecutaron, duraciones anómalas y SLA de tickets. |
 
 ![Portada del informe de ventas](Ventas/Analisis-Ventas-USA/capturas/01-portada.png)
 
