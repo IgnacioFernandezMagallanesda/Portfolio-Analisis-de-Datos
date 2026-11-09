@@ -9,6 +9,7 @@ Hola, soy Nacho, de Mar del Plata (Argentina). Este repositorio reúne mis proye
 | Ventas | [Análisis de ventas USA](Ventas/Analisis-Ventas-USA) | Power BI, Power Query, DAX | Informe de ventas de una cadena minorista de EE. UU. (2023-2025): rentabilidad, clientes, productos y devoluciones. |
 | Ventas | [Análisis de ventas en SQL](Ventas/Analisis-Ventas-SQL) | MySQL, MySQL Workbench | Impacto de los descuentos en la ganancia, causa del bajo margen de la región West y evolución 2023-2025. |
 | [Marketing](Marketing) | [Campaña Meta Ads](Marketing/Campania-Meta-Ads-Chocolateria) | Power BI, Power Query, DAX | Rendimiento de 6 campañas de Meta Ads de una chocolatería (3er trimestre 2026): ROAS, audiencias, creatividades y embudo de conversión. |
+| [Soporte de Datos](Soporte-de-Datos) | [Validación de calidad de datos post-carga](Soporte-de-Datos/Validacion-Calidad-Datos-SQL) | MySQL, MySQL Workbench | 5 tickets de soporte sobre una tabla de staging: duplicados, nulos, valores fuera de rango, estados inconsistentes y cruce con tablas maestras, con diagnóstico, impacto y registro de cada incidente. |
 
 ![Portada del informe de ventas](Ventas/Analisis-Ventas-USA/capturas/01-portada.png)
 
