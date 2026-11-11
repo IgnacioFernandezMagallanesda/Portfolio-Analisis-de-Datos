@@ -110,11 +110,12 @@ WHERE p.precio_unitario <> pr.precio_lista;
 
 -- f) Evidencia para la causa: errores de precio por corrida
 --    FORMATO: una fila por fecha de carga con algún precio incorrecto
---    CONTROL: la suma de pedidos_precio_mal tiene que dar 3
+--    CONTROL: la suma de pedidos_precio_mal tiene que dar 3, y en cada fila
+--             pedidos_corrida >= pedidos_precio_mal
 --    Hallazgo: corrida 12/10: 2 de 2 pedidos con precio mal (el 100%).
 --              Corrida 21/10: 1 de 2. La corrida del 12/10 apunta a un
---              error de la carga (por ejemplo, lectura del separador de
---              miles); el 21/10 puede ser un error de ingreso
+--              error de la carga; el 21/10 puede ser un error de ingreso.
+--              Muestra chica: se confirma comparando con el sistema de ventas
 SELECT
     p.fecha_carga,
     COUNT(*) AS pedidos_corrida,
@@ -128,51 +129,51 @@ ORDER BY p.fecha_carga;
 
 /* REGISTRO DEL INCIDENTE
    Ticket:          TKT-105
-   Problema:        (1) 5 pedidos apuntan a clientes o productos que no
-                    existen en los maestros y desaparecen al cruzarlos.
-                    (2) 3 pedidos tienen un precio 10 veces mayor al de
-                    la lista de precios.
-   Evidencia:       (1) INNER JOIN con clientes: 70 de 76. Faltan 3 sin
-                    cliente (TKT-102) y 3 huérfanos: 1010 y 1056
-                    (cliente 31), 1028 (cliente 40).
-                    INNER JOIN con productos: 74 de 76. Huérfanos:
-                    1015 (producto 15) y 1062 (producto 18).
-                    (2) Pedidos 1012, 1037 y 1060 con relación precio
-                    cargado / precio de lista = 10. Control: 71 + 3 = 74.
-                    Por corrida: 12/10 con 2 de 2 pedidos mal;
-                    21/10 con 1 de 2.
-   Causa probable:  (1) Error de ingreso en el origen, o maestros de
-                    clientes y productos desactualizados (altas nuevas
-                    que todavía no se cargaron). Huérfanos en corridas
-                    distintas, sin patrón de carga.
-                    (2) Corrida del 12/10: todos sus pedidos tienen el
-                    precio mal; apunta a un error de la carga (posible
-                    lectura errónea del separador de miles). Pedido 1037:
-                    posible error de ingreso. Se confirma comparando el
-                    precio de estos pedidos en el sistema de ventas.
-   Impacto:         (1) 5 pedidos desaparecen del reporte de BI sin aviso.
+   Problema:        (1) 5 pedidos huérfanos: apuntan a clientes o productos
+                    que no existen en los maestros. Clientes: 1010, 1028,
+                    1056. Productos: 1015 y 1062. Se suman a los 3 sin
+                    cliente ya informados en el TKT-102.
+                    (2) 3 pedidos con precio 10 veces mayor al de lista:
+                    1012, 1037 y 1060.
+   Evidencia:       (1) Pedidos que cruzan con clientes: 70 de 76 (faltan
+                    3 sin cliente + 3 huérfanos de los clientes 31 y 40).
+                    Pedidos que cruzan con productos: 74 de 76 (huérfanos
+                    de los productos 15 y 18). El maestro de clientes llega
+                    hasta el 25 y el de productos hasta el 12.
+                    (2) 71 de 74 precios coinciden con la lista; los otros
+                    3 tienen relación 10. De más: 990.000 + 576.000 +
+                    81.000 = 1.647.000. Por corrida: 12/10, 2 de 2 pedidos
+                    mal; 21/10, 1 de 2.
+   Causa probable:  (1) Error de ingreso en el origen (código inexistente o
+                    números invertidos, por ejemplo 31 en vez de 13), o
+                    maestros desactualizados: clientes y productos nuevos
+                    que todavía no se dieron de alta.
+                    (2) Corrida del 12/10: apunta a un error de la carga,
+                    pero con 2 pedidos la muestra es chica y no se descarta
+                    un error de ingreso. Corrida del 21/10: puede ser un
+                    error de ingreso. Se confirma comparando el precio de
+                    estos pedidos en el sistema de ventas.
+   Impacto:         (1) 5 pedidos desaparecen del reporte de BI al cruzar
+                    con los maestros, sin aviso.
                     (2) Ventas sobreestimadas en $1.647.000. Los 3 pedidos
-                    están entregados: si se facturaron con ese precio,
-                    a los clientes se les cobró 10 veces más.
-   Prioridad:       Alta para (2): impacto económico y posible cobro
-                    incorrecto a clientes. Media para (1).
+                    están entregados: si se facturaron con ese precio, a
+                    los clientes se les cobró 10 veces más.
+   Prioridad:       Alta para (2): posible cobro de más a clientes.
+                    Media para (1).
    Acción:          (2) Escalado con prioridad alta al responsable del
                     sistema de ventas (verificar el precio en origen y si
                     se facturó) y a Data Engineering (revisar la corrida
                     del 12/10).
                     (1) Escalado a los responsables de los maestros:
-                    confirmar si los clientes 31 y 40 y los productos 15
-                    y 18 existen y faltan en el maestro, o si son errores
-                    de ingreso. Sugerido a Data Engineering: validación
-                    en la carga que alerte códigos inexistentes.
+                    confirmar si los clientes 31 y 40 y los productos 15 y
+                    18 existen y faltan dar de alta, o si son errores de
+                    ingreso.
                     Seguimiento hasta la corrección.
    Respuesta al
    solicitante:     "Los pedidos que se pierden en el cruce son 5 que
                     apuntan a clientes o productos que no existen en las
-                    tablas de referencia (1010, 1028, 1056, 1015 y 1062),
-                    más los 3 sin cliente ya informados. Los precios
-                    distintos son 3 pedidos (1012, 1037 y 1060) cargados
-                    10 veces más caros: suman $1.647.000 de más. Lo
-                    escalamos con prioridad alta. Les aviso cuando esté
-                    resuelto."
+                    tablas de referencia. Además, 3 pedidos tienen el
+                    precio cargado 10 veces más alto: suman $1.647.000 de
+                    más. Lo escalamos, con prioridad en los precios. Les
+                    aviso cuando esté resuelto."
 */
