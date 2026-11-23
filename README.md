@@ -1,6 +1,8 @@
 # Portfolio de Análisis de Datos
 
-Hola, soy Nacho, de Mar del Plata (Argentina). Este repositorio reúne mis proyectos de análisis de datos, organizados por área de negocio. Trabajo principalmente con **Power BI** y **Excel**, y estoy sumando **SQL**.
+Mi nombre es Ignacio Fernández Magallanes, soy de Mar del Plata (Argentina) y en este repositorio reúno mis proyectos de análisis de datos, organizados por área de negocio. Trabajo con **Power BI, SQL y Excel** para transformar datos de negocio en tableros e informes que ayudan a tomar decisiones: dónde se pierde rentabilidad, qué campañas conviene sostener o qué errores hay en una carga de datos.
+
+Cada proyecto parte de una pregunta de negocio concreta, termina en conclusiones y recomendaciones, y suma una técnica nueva respecto del anterior.
 
 ## Proyectos
 
