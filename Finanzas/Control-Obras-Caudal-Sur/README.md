@@ -57,7 +57,7 @@ Los gastos vienen de una exportación del sistema con 1.756 filas. Antes de usar
 - Separé **8 comprobantes observados** en una tabla aparte: 6 sin obra asignada y 2 con el importe ilegible. Suman $3,1 millones y quedan fuera del informe hasta que el cliente los corrija.
 - Quedaron **1.723 comprobantes válidos**.
 
-En total registré 49 problemas de calidad, todos resueltos, en un registro aparte (`Documentacion\Registro_calidad_datos.xlsx`).
+En total registré 49 problemas de calidad, todos resueltos, en un registro aparte ([`Documentacion/Registro_calidad_datos.xlsx`](Documentacion/Registro_calidad_datos.xlsx)).
 
 ### Modelo de datos
 
